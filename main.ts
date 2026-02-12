@@ -1,20 +1,21 @@
 import { Plugin, Editor, MarkdownView } from 'obsidian';
 
-// Define the main class for the New Paragraph Plugin, extending Obsidian's Plugin class.
 export default class NewParagraphPlugin extends Plugin {
 
-    /**
-     * This method is called when the plugin is loaded.
-     */
-    async onload() {
-        // Register a DOM event listener for the 'Enter' key in the capture phase (true)
-        // This allows us to intercept the key before Obsidian's default handler.
+    onload() {
         this.registerDomEvent(document, 'keydown', (evt: KeyboardEvent) => {
-            // Only trigger on Enter with no modifiers
+            // 1. Check modifiers: Only trigger on plain 'Enter'
             if (evt.key === 'Enter' && !evt.shiftKey && !evt.ctrlKey && !evt.altKey && !evt.metaKey) {
+
+                // 2. SAFETY CHECK: Do not intercept if a suggestion/autocomplete popup is open.
+                // Without this, you cannot select items in the Quick Switcher, Command Palette, 
+                // or Link Autocomplete ([[link]]).
+                if (document.querySelector('.suggestion-container')) {
+                    return;
+                }
+
                 const activeView = this.app.workspace.getActiveViewOfType(MarkdownView);
 
-                // Only act if we have a markdown view and the editor has focus
                 if (activeView && activeView.editor.hasFocus()) {
                     const editor = activeView.editor;
                     const cursor = editor.getCursor();
@@ -30,22 +31,16 @@ export default class NewParagraphPlugin extends Plugin {
                      */
                     const listOrSpecialRegex = /^(\s*)([-*+]|\d+\.|>|\||```|~~~|[-*+]\s?\[[ xX]\])(\s|$)/;
 
-                    // If we are NOT in a list or special context, proceed with double newline
                     if (!listOrSpecialRegex.test(line)) {
-                        evt.preventDefault();    // Stop Obsidian from inserting its own newline
-                        evt.stopPropagation();   // Stop the event from bubbling up further
+                        evt.preventDefault();
+                        evt.stopPropagation();
                         this.insertDoubleNewline(editor);
                     }
                 }
             }
-        }, true); // The 'true' here enables capture phase
+        }, true);
     }
-
-    /**
-     * Insert two newlines at the current cursor position
-     */
-    private insertDoubleNewline(editor: Editor) {
-        // replaceSelection handles both replacing selected text and moving the cursor automatically
+    private insertDoubleNewline(editor: Editor): void {
         editor.replaceSelection('\n\n');
     }
 }

@@ -1,7 +1,7 @@
 {
 	"id": "new-paragraph-on-enter",
 	"name": "New Paragraph on Enter",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Create a new paragraph by pressing the enter key once.",
 	"author": "BiigFish",
