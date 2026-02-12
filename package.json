@@ -1,6 +1,6 @@
 {
 	"name": "new-paragraph-on-enter",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Create a new paragraph by pressing the enter key once",
 	"main": "main.js",
 	"scripts": {
