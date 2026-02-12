@@ -1,4 +1,4 @@
-# Obsidian New Paragraph Plugin
+# New Paragraph on Enter
 
 This plugin automatically inserts a double newline when you press the Enter key, making it easier to create paragraphs while typing.
 

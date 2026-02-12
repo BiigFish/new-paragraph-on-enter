@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-new-paragraph-plugin",
+	"name": "new-paragraph-on-enter",
 	"version": "1.0.0",
-	"description": "Create a new paragraph by clicking the enter key once",
+	"description": "Create a new paragraph by pressing the enter key once",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",

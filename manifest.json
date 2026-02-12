@@ -1,9 +1,9 @@
 {
-	"id": "obsidian-new-paragraph-plugin",
-	"name": "New Paragraph Plugin",
+	"id": "new-paragraph-on-enter",
+	"name": "New Paragraph on Enter",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Inserts double newlines for paragraphs while respecting lists, tasks, and tables.",
+	"description": "Create a new paragraph by pressing the enter key once",
 	"author": "BiigFish",
 	"authorUrl": "https://github.com/BiigFish",
 	"isDesktopOnly": true
