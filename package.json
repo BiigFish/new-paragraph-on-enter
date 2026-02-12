@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-new-paragraph-plugin",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Create a new paragraph by clicking the enter key once",
 	"main": "main.js",
 	"scripts": {

@@ -1,7 +1,7 @@
 import { Plugin, Editor, MarkdownView } from 'obsidian';
 
-// Define the main class for your plugin, extending Obsidian's Plugin class.
-export default class DoubleNewlinePlugin extends Plugin {
+// Define the main class for the New Paragraph Plugin, extending Obsidian's Plugin class.
+export default class NewParagraphPlugin extends Plugin {
 
     /**
      * This method is called when the plugin is loaded.

@@ -5,9 +5,10 @@
 # Node dependencies
 node_modules/
 
-# Compilation output (NOT main.js)
-# Note: We keep main.js in the root for Obsidian compatibility
-# but we ignore other temporary build artifacts if they existed.
+# Build products
+main.js
+*.map
+data.json
 
 # Local environment files
 .env
