@@ -1,7 +1,7 @@
 {
 	"id": "obsidian-new-paragraph-plugin",
 	"name": "New Paragraph Plugin",
-	"version": "1.1.0",
+	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "Inserts double newlines for paragraphs while respecting lists, tasks, and tables.",
 	"author": "BiigFish",
